@@ -62,5 +62,88 @@ linkcolor=black}
 %\makeindex
 
 \begin{document}
+	\maketitle
+	\section{Eterostrutture}
+	Un-eterostruttura \`e una giunzione tra due materiali differenti. Si presenta il problema di cercare due materiale con strutture cristalline il pi\`u simili possibile per eveitare stress alla giunzione e per rispettare il pi\`u possibile il teorema di Bloch.
+	
+	Per esempio Semiconduttori simili sono
+	\begin{itemize}
+		\item GaAs e AlAs
+		\item GaIn e e InP
+	\end{itemize}
+	In quanto hanno una costante cristallina molto simile.
+	
+	A questo punto scegliamo la prima coppia, in quanto GaAs ha il gap diretto e ci dedicheremo allo studio della giunzione 
+	\begin{equation*}
+	\text{GaAs}\leftrightarrow\text{Al}_x\text{Ga}_{1-x}As
+	\end{equation*}
+	
+	la $x$ indica la $\%$ di Al rispetto al Ga nel secondo mezzo, varia tra 0 e 1, solitamente si scelgono valori inferiori a 0.4 in quanto a 0.45 il gap diventa indiretto.
+	
+	\begin{figure}[h]
+		\caption{}
+		immagine dei due livelli dei materiali vicini $\Delta E_c = E_{c2}-E_{c1} = 0.77 x$ e $\Delta E_v = E_{c1}-E_{c2} = 0.48 x$
+	\end{figure}
+	
+	A questo punto droghiamo: il lato a destra del sistema con donori e la part senza alluminio con accettori e procediamo con i calcoli della giuntura unita. Il drogaggio sar\`a tale che i donori saranno molti pi\`u degli accettori:
+	\begin{equation*}
+	N_A\ll N_D  \Rightarrow n \gg p
+	\end{equation*}
 
+	Definisco la differenza tra le due energie di Fermi:
+	\begin{equation}
+	E_{F1} - E_{F2} = e\phi_0
+	\end{equation}
+	
+	\begin{figure}
+		immagine lacune e e- in movimento
+	\end{figure}
+	Ho quindi movimento di lacune e elettroni, il che mi dar\`a luogo  a una corrente di deriva:
+	
+	\begin{equation}
+	J_{d}^{(n)}  = e D_n \de nx
+	\end{equation}
+	
+	\begin{figure}
+		immagine distribuzioni di carica
+	\end{figure}
+	
+	La rilocazione di lacune e elettroni crea una distribuzione di carica non omogenea che da luogo a un campo elettrico che si oppone alla corrente di deriva. 
+	\begin{equation}
+	E(z) = -\de{\phi}z, \ \ \de{^2\phi}{z^2} = -\frac{\rho_i}{\varepsilon_0 \varepsilon_{r i}}
+	\end{equation}
+	dove $i$ indica il mezzo 1 o 2. D'ora in poi sintetizzer\`o:  $\varepsilon_0 \varepsilon_{r i} = \varepsilon_i$
+	
+	Definisco le condizioni al contorno del campo:
+	\begin{eqnarray}
+	\phi(0^+) = 	\phi(0^-)\\
+	\varepsilon_1 \phi'(0^+) = 	\varepsilon_2 \phi'(0^-)\\
+	\phi(z) = costante & \text{ se } z \geq \df n\text{ o } z \leq -\df p
+	\end{eqnarray}
+	\begin{equation}
+	\phi(+\infty) - \phi(-\infty) = \phi_0
+\end{equation}
+
+	\begin{figure}
+		\caption{Il potenziale cambia la posizione delle bande}
+	\end{figure}
+	e avremmo 
+	\begin{equation}
+	\phi(z) = \lr\{ . {\begin{array}{lr}
+\phi_1 + e \frac{N_a}{2\varepsilon_1}\lrt{z+\df p}^2 & -\df p \leq z \leq 0\\
+\phi_2 + e \frac{N_a}{2\varepsilon_2}\lrt{z-\df n}^2 & 0 \leq z \leq \df n
+		\end{array}}
+	\end{equation}
+	Per comodit\`a definiamo $\phi_2 = 0$, come ipotesi \`e ragionevole perch\`e nel mezzo 2 il drogaggio \`e molto intenso e quindi \`e in condizione di essere ''dominante'' sul mezzo 1. In pratica sto schematizzando che l'$E_{F1}$ si sposter\`a molto meno rispetto all'$E_{F1}$.
+	
+	Rispetto al caso di una giunzione omogenea le dimensioni delel zone di svuotamento si calcolano:
+	\begin{equation}
+	\df n = \lrt{\frac{N_a}{N_d} \frac{1}{\varepsilon_1 N_a + \varepsilon_2 N_d} \frac{2\varepsilon_1 \varepsilon 2 \phi_0 }{e}}^{\frac 12}
+	\end{equation}
+		\begin{equation}
+		\df p = \lrt{\frac{N_d}{N_a} \frac{1}{\varepsilon_1 N_a + \varepsilon_2 N_d} \frac{2\varepsilon_1 \varepsilon 2 \phi_0 }{e}}^{\frac 12}
+		\end{equation}
+		\begin{figure}
+			Immagine risultato
+		\end{figure}
 \end{document}
